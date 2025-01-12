@@ -4,21 +4,19 @@ function Dashboard() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Fetch user data from localStorage
     const storedUserData = JSON.parse(localStorage.getItem('user'));
 
     console.log(storedUserData); // Debug: Log the stored user data
 
     if (storedUserData && storedUserData.message) {
-      // Set the user data from the 'message' field
       const user = storedUserData.message;
       setUserData({
         full_name: user.full_name,
         username: user.username,
-        country: user.country_row_id, // Assuming country_row_id needs to be replaced with the country name
+        country: user.country_row_id, 
         email_id: user.email_id,
         mobile_number: user.mobile_number,
-        referral_id: user.referral_username, // Referral username as Referral ID
+        referral_id: user.referral_username, 
       });
     } else {
       // Redirect to login if no user data found

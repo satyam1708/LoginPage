@@ -8,9 +8,9 @@ function Signup() {
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [referralId, setReferralId] = useState('');
-  const [countryId, setCountryId] = useState('101'); // Example country id, modify as needed
+  const [countryId, setCountryId] = useState('101');  
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); // Initialize navigate hook
+  const navigate = useNavigate(); 
 
   const handleSignup = async (e) => {
     e.preventDefault();

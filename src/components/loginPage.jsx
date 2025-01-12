@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirect
-import { Link } from 'react-router-dom'; // Import Link to navigate to Signup page
+import { useNavigate } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 function Login() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Mock API call (replace with actual login API)
     const loginData = {
       login_id: userName,
       password: password,
@@ -30,7 +29,6 @@ function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Store user data (for simplicity, using localStorage)
         localStorage.setItem('user', JSON.stringify(data));
 
         // Redirect to Dashboard
